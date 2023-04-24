@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:700&display=swap');
+$background: #E4FFF7;
+$text: #382b22;
+$light-pink: #fff0f0;
+$pink-border: #b18597;
+
+@function textShadow($precision,
+    $size,
+    $color) {
+    $value: null;
+    $offset: 0;
+    $length: $size * (1 / $precision) - 1;
+
+    @for $i from 0 through $length {
+        $offset: $offset +$precision;
+        $shadow: $offset +px $offset +px $color;
+        $value: append($value, $shadow, comma);
+    }
+
+    @return $value;
+}
+
+.playful span {
+    position: relative;
+    color: $pink-border;
+    text-shadow: textShadow(0.25, 6, #c9307d);
+    animation: scatter 1.75s infinite;
+}
+
+@keyframes scatter {
+    0% {
+        top: 0;
+    }
+
+    50% {
+        top: -10px;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+.body-color {
+    background-color: $background;
+}
+
+ion-content {
+    --background: $background;
+}
+
+h1 {
+    font-size: 85px;
+    text-transform: uppercase;
+    font-family: "Archivo Black", "Archivo", sans-serif;
+    font-weight: normal;
+    display: block;
+    width: 666px;
+    max-width: 80vw;
+    min-height: 90px;
+    height: auto;
+    text-align: center;
+    margin: 10rem auto;
+    margin: calc(25vh - 9rem) auto;
+}
+
+.b-g-t {
+    background-color: transparent;
+}
+
+.header__color {
+    background: radial-gradient(ellipse at top, #f58d8d, transparent), ;
+    // background-color: $light-pink;
+}
+
+.card__color {
+    background: {
+        image: radial-gradient(rgba(red, 0.3), rgba(red, 0) 40vw), radial-gradient(rgba(green, 0.3), rgba(green, 0) 40vw), radial-gradient(rgba(blue, 0.3), rgba(blue, 0) 40vw), radial-gradient(rgba(yellow, 0.3), rgba(yellow, 0) 40vw), radial-gradient(rgba(red, 0.3), rgba(red, 0) 40vw);
+        position: -40vw 14rem, 50% 10rem, 60vw 14rem, -10vw calc(14rem + 20vw), 30vw calc(14rem + 20vw);
+        size: 80vw 80vw;
+        repeat: no-repeat;
+    }
+}
+
+.f-f {
+    font-family: 'Rubik', sans-serif;
+    color: $text;
+}
+
+.triangle {
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    background-color: $pink-border;
+    min-width: 100px;
+    min-height: 100px;
+}

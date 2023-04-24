@@ -1,17 +1,42 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title class="header__color">
+            <h1 class="playful body" aria-label="MVVM!! ">
+                <span aria-hidden="true ">M</span><span aria-hidden="true ">V</span><span aria-hidden="true ">V</span><span aria-hidden="true ">M</span><span aria-hidden="true ">!</span><span aria-hidden="true ">!</span>
+            </h1>
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true ">
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+    <ion-card class="card__color">
+        <ion-card-header>
+            <h2 class="f-f">Прямокутний трикутник</h2>
+            <div class="triangle">
+
+            </div>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-item color="transparent" lines="none">
+              
+                <ion-input label="Катет a" labelPlacement="floating" #inputA class="f-f " 
+                type="number" value="3"></ion-input>
+            </ion-item>
+            <ion-item color="transparent" lines="none">
+              
+                <ion-input label="Катет a" labelPlacement="floating" #inputB 
+                class="f-f" type="number" value="4"></ion-input>
+            </ion-item>
+            <ion-item color="transparent" lines="none">
+                <ion-label class="f-f">
+                    Гіпотенуза C
+                </ion-label>
+                <ion-label class="f-f">
+                    {{ras(inputA.value,inputB.value)}}
+                </ion-label>
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
+
 </ion-content>

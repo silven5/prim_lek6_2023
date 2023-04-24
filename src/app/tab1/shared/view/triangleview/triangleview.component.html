@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      MVC
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+<form [formGroup]="tringleForm" (ngSubmit)="add(tringleForm.value)">
+<ion-card>
+  <ion-card-header>
+    Прямокутний трикутник
+  </ion-card-header>
+  <ion-card-content>  
+      <ion-item>
+
+      <input id="a1" type="text" 
+        label="Катет A:" labelPlacement="floating"
+        type="number" 
+        min="1" max="100" 
+        formControlName="a"
+        >
+      </ion-item>
+      <ion-item>
+          <input id="b1" type="text" 
+          label="Катет B:" labelPlacement="floating"
+          type="number" min="1" max="100" 
+          formControlName="b">
+      </ion-item>
+      </ion-card-content>
+</ion-card>
+  <ion-button 
+  type="submit"  color="success"
+  expand="block"  [disabled]="!tringleForm.valid">
+  Створити трикутник
+</ion-button>
+</form>
+<ion-item *ngFor="let tr of  triangles;">
+a={{tr.a}}
+b={{tr.b}}
+c={{tr.c}}
+
+</ion-item>
+  </ion-content>

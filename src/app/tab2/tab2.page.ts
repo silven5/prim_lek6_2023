@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
+import { PresenterService } from './presenter/presenter.service';
+import { ITriangleView } from './view/ItriangleView';
+import { triangleView } from './view/triangleview';
 
 @Component({
   selector: 'app-tab2',
@@ -11,6 +14,14 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
 })
 export class Tab2Page {
 
-  constructor() {}
+  view!: ITriangleView;
+  constructor(private pr: PresenterService) {
+    this.view = new triangleView();
 
+  }
+
+  ras(a: any, b: any) {
+    this.pr.loadTriangle(a, b, this.view);
+
+  }
 }
